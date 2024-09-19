@@ -71,14 +71,14 @@ public class DoubleDimension {
 
     public static void main(String[] args) {
         DoubleDimension doubleDimension = new DoubleDimension(4,4);
-        doubleDimension.insert(3,0,0);
-        doubleDimension.insert(4,0,1);
-        doubleDimension.insert(5,1,0);
-        doubleDimension.insert(6,1,1);
+        doubleDimension.insert(2,0,0);
+        doubleDimension.insert(2,0,1);
+        doubleDimension.insert(4,1,0);
+        doubleDimension.insert(4,1,1);
 
         doubleDimension.traverse();
-        doubleDimension.searchArray(7);
-        doubleDimension.deleteValueAtIndex(0,1);
+        doubleDimension.searchArray(4);
+        doubleDimension.deleteValueAtIndex(0,4);
         doubleDimension.traverse();
 
 
