@@ -41,7 +41,7 @@ public class DoubleDimension {
                 System.out.println();
             }
         } catch (Exception e) {
-            System.out.println("Array no longer exist");
+            System.out.println("The array no longer exists.");
         }
     }
 
@@ -63,9 +63,9 @@ public class DoubleDimension {
     public void deleteValueAtIndex (int rows, int columns) {
         try {
             arr[rows] [columns]= Integer.MIN_VALUE;
-            System.out.println("The value has been deleted successfully");
+            System.out.println("The value has been successfully deleted.");
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("The value that is provided is not in the range of array");
+            System.out.println("The value provided is not in the range of the array");
         }
     }
 
