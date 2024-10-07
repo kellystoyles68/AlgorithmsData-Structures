@@ -12,7 +12,22 @@ public class UndoRedoManager<T> {
 
     }
     private Node currentState;
-    //Undo operation
+
+    //Operation: add state
+    public void  addState (T newState) {
+        //create a new node for the new task
+        Node newNode = new Node(newState);
+        //Set the links for the new Node
+        newNode.prev = currentState;
+        newNode.next = null;
+        //Update the next link for the current state
+        if (currentState !=null){
+            currentState.next = newNode;
+        }
+        //update the current to the new state
+        currentState = newNode;
+    }
+    //Operation: Undo state
     public T undo(){
         if (currentState == null){
             //currentState  is  null  upon initialization
@@ -32,7 +47,7 @@ public class UndoRedoManager<T> {
         return currentState.state;
     }
 
-    //Redo Operation
+    //Operation: Redo state
     public T redo() {
         if (currentState == null) {
             //currentState  is  null  upon initialization
@@ -51,20 +66,6 @@ public class UndoRedoManager<T> {
         return currentState.state;
     }
 
-    //perform an operation
-    public void  addState (T newState) {
-        //create a new node for the new task
-        Node newNode = new Node(newState);
-        //Set the links for the new Node
-        newNode.prev = currentState;
-        newNode.next = null;
-        //Update the next link for the current state
-        if (currentState !=null){
-            currentState.next = newNode;
-        }
-        //update the current to the new state
-        currentState = newNode;
-    }
 
     public static void main(String[] args) {
         System.out.println("\nProject requirements. \n- Implement an application that support undo/redo functionality. \n- Use a linked list to maintain a sequence of states." +
